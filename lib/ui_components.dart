@@ -2,9 +2,11 @@ library ui_components;
 
 import "package:flutter/material.dart";
 import 'package:ui_components/login_screen_1.dart';
+import 'package:ui_components/login_screen_2.dart';
 
 enum Screens {
   LoginScreenType1,
+  LoginScreenType2
 }
 
 class UIComponents extends StatelessWidget {
@@ -14,20 +16,20 @@ class UIComponents extends StatelessWidget {
   final String avatarImage;
   final Function onLoginClick;
   final Function navigatePage;
-  final Function onAnotherAccountClick;
+  final Function onGoogleSignIn;
+  
   UIComponents(
       {@required this.screenType,
       @required this.emailController,
       @required this.passwordController,
-      @required this.avatarImage,
+      this.avatarImage,
       @required this.onLoginClick,
-      @required this.onAnotherAccountClick,
+      @required this.onGoogleSignIn,
       @required this.navigatePage
       })
       : assert(screenType != null),
         assert(emailController != null),
-        assert(passwordController != null),
-        assert(avatarImage != "");
+        assert(passwordController != null);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,15 @@ class UIComponents extends StatelessWidget {
           avatarImage: avatarImage,
           onLoginClick: onLoginClick,
           navigatePage: navigatePage,
-          onAnotherAccountClick: onAnotherAccountClick,
+          googleSignIn: onGoogleSignIn,
+        );
+      case Screens.LoginScreenType2:
+        return LoginScreen2(
+          emailController: emailController,
+          passwordController: passwordController,
+          onLoginClick: onLoginClick,
+          navigatePage: navigatePage,
+          googleLogin: onGoogleSignIn,
         );
     }
   }

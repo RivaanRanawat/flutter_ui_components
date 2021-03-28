@@ -5,14 +5,14 @@ class LoginScreen1 extends StatefulWidget {
   final TextEditingController passwordController;
   final String avatarImage;
   final Function onLoginClick;
-  final Function onAnotherAccountClick;
+  final Function googleSignIn;
   final Function navigatePage;
   LoginScreen1({
     @required this.emailController,
     @required this.passwordController,
     @required this.avatarImage,
     @required this.onLoginClick,
-    @required this.onAnotherAccountClick,
+    @required this.googleSignIn,
     @required this.navigatePage,
   });
   @override
@@ -139,13 +139,14 @@ class _LoginScreen1State extends State<LoginScreen1> {
                           ),
                         ),
                       ),
-                      onPressed: widget.onAnotherAccountClick,
+                      onPressed: widget.googleSignIn,
                       child: Text(
-                        "Another Account",
+                        "Sign In With Google",
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold),
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
