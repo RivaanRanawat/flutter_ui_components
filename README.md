@@ -8,7 +8,7 @@ No External Packages have been used, so in case, the widgets don't go according 
 ## Login Screens
 
 ### Login Screen 1
-(./assets/images/loginScreen1.jpeg)
+![alt text](https://github.com/RivaanRanawat/flutter_ui_components/blob/master/assets/images/loginScreen1.jpeg?raw=true)
 
 #### Usage
 ```
