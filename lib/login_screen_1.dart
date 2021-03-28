@@ -4,7 +4,17 @@ class LoginScreen1 extends StatefulWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final String avatarImage;
-  LoginScreen1({@required this.emailController, @required this.passwordController, @required this.avatarImage});
+  final Function onLoginClick;
+  final Function onAnotherAccountClick;
+  final Function navigatePage;
+  LoginScreen1({
+    @required this.emailController,
+    @required this.passwordController,
+    @required this.avatarImage,
+    @required this.onLoginClick,
+    @required this.onAnotherAccountClick,
+    @required this.navigatePage,
+  });
   @override
   _LoginScreen1State createState() => _LoginScreen1State();
 }
@@ -16,9 +26,14 @@ class _LoginScreen1State extends State<LoginScreen1> {
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          FittedBox(
-            child: Image.asset('assets/images/signin_page_background.png'),
-            fit: BoxFit.fitHeight,
+          Container(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/images/signin_page_background.png'),
+                  fit: BoxFit.fill),
+            ),
           ),
           Container(
             margin: EdgeInsets.only(top: 120),
@@ -100,7 +115,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
                           ),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: widget.onLoginClick,
                       child: Text(
                         "Log in",
                         style: TextStyle(
@@ -124,7 +139,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
                           ),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: widget.onAnotherAccountClick,
                       child: Text(
                         "Another Account",
                         style: TextStyle(
@@ -149,7 +164,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
                         children: [
                           IconButton(
                               icon: Icon(Icons.keyboard_arrow_up),
-                              onPressed: () {}),
+                              onPressed: widget.navigatePage),
                           Text(
                             "Sign up",
                             style: TextStyle(

@@ -1,3 +1,6 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1] - 28/03/21
 
 * Added Login Screen 1
+## [0.0.2] - 28/03/21
+
+* Fixed Login Screen 1

@@ -12,11 +12,18 @@ class UIComponents extends StatelessWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final String avatarImage;
+  final Function onLoginClick;
+  final Function navigatePage;
+  final Function onAnotherAccountClick;
   UIComponents(
       {@required this.screenType,
       @required this.emailController,
       @required this.passwordController,
-      @required this.avatarImage})
+      @required this.avatarImage,
+      @required this.onLoginClick,
+      @required this.onAnotherAccountClick,
+      @required this.navigatePage
+      })
       : assert(screenType != null),
         assert(emailController != null),
         assert(passwordController != null),
@@ -30,6 +37,9 @@ class UIComponents extends StatelessWidget {
           emailController: emailController,
           passwordController: passwordController,
           avatarImage: avatarImage,
+          onLoginClick: onLoginClick,
+          navigatePage: navigatePage,
+          onAnotherAccountClick: onAnotherAccountClick,
         );
     }
   }
