@@ -13,10 +13,18 @@ No External Packages have been used, so in case, the widgets don't go according 
 #### Usage
 ```
 UIComponents(
-    screenType: LoginScreenType1,
+    avatarImage: _avatarImage_,
     emailController: _emailController,
     passwordController: _passwordController,
-    avatarImage: _avatarImage,
+    navigatePage: () {
+        // Works when user clicks the sign up button
+    },
+    onAnotherAccountClick: () {
+        // Works when user clicks Another Account Button
+    },
+    onLoginClick: () {
+        // Works when user clicks the Log in Button
+    },
 );
 ```
 
