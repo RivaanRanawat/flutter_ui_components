@@ -25,6 +25,7 @@ flutter:
   assets:
     - assets/images/signin_page_background.png
     - assets/images/user_avatar.png
+    - assets/images/background_image_one_signin.png
   #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see
